@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading;
 using UnityEngine;
 
 [DefaultExecutionOrder(-1)]
@@ -20,6 +21,10 @@ public class Game : MonoBehaviour
 
     private void Awake()
     {
+        
+        width = Preferences.gridSize;
+        height = Preferences.gridSize;
+        mineCount = (width * height) / 8;
         Application.targetFrameRate = 60;
         board = GetComponentInChildren<Board>();
     }
